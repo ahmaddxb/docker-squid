@@ -113,6 +113,8 @@ RUN set -x && \
 	deluser squid 2>/dev/null; delgroup squid 2>/dev/null; \
 	addgroup -S squid -g 3128 && adduser -S -u 3128 -G squid -g squid -H -D -s /bin/false -h /var/cache/squid squid
 
+RUN apk --update add curl
+
 RUN apk add --no-cache \
 		libstdc++ \
 		heimdal-libs \
